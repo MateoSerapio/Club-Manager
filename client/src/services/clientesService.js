@@ -1,6 +1,7 @@
 import axios from "axios";
+import { CLIENTES_URL } from "../config/api";
 
-const URL = "https://fakestoreapi.com/users";
+const URL = CLIENTES_URL;
 
 const crearCliente = async (cliente) => {
 
