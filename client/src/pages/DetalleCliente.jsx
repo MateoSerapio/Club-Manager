@@ -1,6 +1,7 @@
 import '../css/detallecliente.css'
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { CLIENTES_URL } from "../config/api";
  
 const DetalleCliente = () => {
  const { id } = useParams();
@@ -11,7 +12,7 @@ const DetalleCliente = () => {
   const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/users/${id}`)
+    fetch(`${CLIENTES_URL}/${id}`)
       .then((res) => res.json())
       .then((data) => setCliente(data));
   }, [id]);
@@ -19,7 +20,7 @@ const DetalleCliente = () => {
   const eliminarCliente = async () => {
     try {
       const respuesta = await fetch(
-        `https://fakestoreapi.com/users/${id}`,
+        `${CLIENTES_URL}/${id}`,
         {
           method: "DELETE",
         }
