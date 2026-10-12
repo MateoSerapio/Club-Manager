@@ -24,6 +24,25 @@ El backend necesita un archivo `server/.env`. Para configurarlo, copiá `server/
 
 **Importante:** no subas el archivo `.env` real a GitHub.
 
+## Cargar datos de ejemplo
+
+```bash
+cd server
+node seed.js
+```
+
+Inserta clientes de ejemplo en MongoDB Atlas. Antes de cargarlos, borra los clientes existentes.
+
+## Endpoints de la API
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | /api/clientes | Lista todos los clientes |
+| GET | /api/clientes/:id | Trae un cliente |
+| POST | /api/clientes | Crea un cliente |
+| PUT | /api/clientes/:id | Modifica un cliente (opcional) |
+| DELETE | /api/clientes/:id | Elimina un cliente |
+
 ## Tecnologías
 
 * **Frontend:** React + Vite
